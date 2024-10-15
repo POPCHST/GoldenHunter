@@ -1,0 +1,101 @@
+/* ProductList.css */
+.products-container {
+  display: grid; /* ใช้ grid layout */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* สร้างคอลัมน์ที่มีขนาดขั้นต่ำ 250px และขยายเต็มที่หากมีพื้นที่ */
+  gap: 1rem; /* ช่องว่างระหว่างสินค้า */
+  padding: 1rem; /* เพิ่มพื้นที่ภายในของคอนเทนเนอร์ */
+  background-color: #f9f9f9; /* สีพื้นหลังของคอนเทนเนอร์ */
+  border-radius: 10px;
+  overflow: auto; /* ให้เลื่อนแนวนอนได้หากมีจำนวนสินค้าเยอะ */
+}
+
+.product {
+  border: 1px solid #ddd; /* ขอบของกรอบ */
+  border-radius: 12px; /* ทำให้มุมกรอบโค้งมน */
+  overflow: hidden; /* ป้องกันการล้นของภาพและข้อมูลออกจากกรอบ */
+  background-color: #fff; /* สีพื้นหลังของกรอบ */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เงาเพื่อให้กรอบดูยกขึ้น */
+  transition: box-shadow 0.3s ease; /* การเปลี่ยนแปลงเงา */
+  display: flex;
+  flex-direction: column; /* ให้สินค้าแสดงเป็นแนวตั้ง */
+  justify-content: space-between; /* จัดตำแหน่งสินค้าให้มีพื้นที่ว่างเท่ากัน */
+}
+
+.product:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* เพิ่มเงาเมื่อวางเมาส์ */
+}
+
+.product-image {
+  display: flex; /* ใช้ flexbox เพื่อจัดตำแหน่ง */
+  justify-content: center; /* จัดตำแหน่งภาพให้อยู่ตรงกลางแนวนอน */
+  align-items: center; /* จัดตำแหน่งภาพให้อยู่ตรงกลางแนวตั้ง */
+  width: 100%; /* ขนาดของกรอบภาพเป็น 100% ของกรอบสินค้า */
+  background-color: #f0f0f0; /* สีพื้นหลังของกรอบภาพ */
+  padding: 1rem; /* เพิ่มช่องว่างรอบๆ ภาพ */
+  box-sizing: border-box; /* รวม padding และ border ในขนาดความกว้าง */
+}
+
+.product-image img {
+  max-width: 100%; /* จำกัดความกว้างของภาพไม่ให้เกินกรอบ */
+  max-height: 200px; /* จำกัดความสูงของภาพตามต้องการ */
+  object-fit: contain; /* ให้ภาพไม่เสียสัดส่วนและเต็มพื้นที่ขององค์ประกอบ */
+}
+
+.product-info {
+  padding: 1rem; /* เพิ่มพื้นที่ภายในกรอบข้อมูล */
+  text-align: center; /* จัดข้อความให้ตรงกลาง */
+  color: #000; /* สีข้อความเป็นสีดำ */
+}
+
+.product-name {
+  font-size: 1.25rem; /* ขนาดฟอนต์ชื่อสินค้า */
+  margin: 0.5rem 0; /* ระยะห่างด้านบนและล่าง */
+  color: #000; /* สีข้อความเป็นสีดำ */
+}
+
+.product-price {
+  color: #000; /* สีข้อความราคาเป็นสีดำ */
+  font-size: 1.125rem; /* ขนาดฟอนต์ของราคา */
+  margin: 0.5rem 0; /* ระยะห่างด้านบนและล่าง */
+}
+
+.product-description {
+  font-size: 0.875rem; /* ขนาดฟอนต์ของคำบรรยาย */
+  color: #000; /* สีข้อความคำบรรยายเป็นสีดำ */
+  margin: 0.5rem 0; /* ระยะห่างด้านบนและล่าง */
+}
+
+.product-button {
+  padding: 0.5rem 1rem; /* เพิ่มพื้นที่ภายในปุ่ม */
+  background-color: #da945b; /* สีพื้นหลังของปุ่ม */
+  color: #fff; /* สีข้อความของปุ่ม */
+  border: none; /* ลบเส้นขอบของปุ่ม */
+  border-radius: 4px; /* มุมปุ่มโค้ง */
+  cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นมือเมื่อวางเมาส์ */
+  font-size: 1rem; /* ขนาดฟอนต์ของปุ่ม */
+  transition: background-color 0.3s; /* การเปลี่ยนแปลงสีพื้นหลัง */
+  width: 100%; /* ให้ปุ่มขยายเต็มความกว้างของกรอบสินค้า */
+}
+
+.product-button:hover {
+  background-color: #0056b3; /* สีพื้นหลังเมื่อวางเมาส์ */
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .products-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* ลดขนาดขั้นต่ำของคอลัมน์ */
+  }
+}
+
+@media (max-width: 768px) {
+  .products-container {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* ลดขนาดขั้นต่ำของคอลัมน์ */
+  }
+}
+
+@media (max-width: 480px) {
+  .products-container {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* ลดขนาดขั้นต่ำของคอลัมน์ */
+  }
+}

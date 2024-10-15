@@ -1,0 +1,73 @@
+/* Footer CSS */
+.footer {
+  background-color: #333; /* สีพื้นหลัง */
+  color: #fff; /* สีข้อความ */
+  padding: 2rem 1rem;
+  text-align: center;
+  width: 100%; /* ขยายเต็มความกว้างของหน้าจอ */
+  box-sizing: border-box; /* ทำให้ padding รวมในขนาดทั้งหมด */
+  position: relative; /* ใช้เพื่อให้ footer อยู่ในตำแหน่งที่ถูกต้อง */
+  bottom: 0; /* ให้อยู่ที่ด้านล่างสุด */
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap; /* ทำให้ตอบสนองกับหน้าจอที่เล็กลง */
+  justify-content: space-around; /* จัดช่องว่างระหว่างคอลัมน์ */
+  max-width: 1200px; /* ปรับขนาดสูงสุดของ container ตามต้องการ */
+  margin: 0 auto; /* จัดให้ container อยู่ตรงกลาง */
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 200px; /* ขนาดขั้นต่ำของคอลัมน์ */
+  margin: 1rem 0;
+}
+
+.footer-column h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer-column p,
+.footer-column ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-column a {
+  color: #fff; /* สีลิงก์ */
+  text-decoration: none;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  border-top: 1px solid #444; /* เส้นขอบด้านบนของ footer-bottom */
+  padding-top: 1rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-links li {
+  list-style: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column; /* เปลี่ยนการจัดวางคอลัมน์เป็นแนวตั้ง */
+    align-items: center; /* จัดให้อยู่กลาง */
+  }
+
+  .footer-column {
+    margin: 0.5rem 0; /* ปรับระยะห่างระหว่างคอลัมน์ */
+  }
+}

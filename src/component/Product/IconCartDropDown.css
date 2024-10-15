@@ -1,0 +1,37 @@
+.icon-dropdown-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .icon {
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+    z-index: 100;
+  }
+  
+  .dropdown p {
+    margin: 0;
+    padding: 5px 0;
+    font-size: 14px;
+    color: rgb(235, 118, 205);
+  }
+  
+  .dropdown p:hover {
+    background-color: #f0f0f0;
+    color: blue;
+  }
+  

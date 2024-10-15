@@ -1,0 +1,231 @@
+/* Header.css */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #333;
+  color: #fff;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.header .logo {
+  font-size: 5px;
+  position: relative; /* เปลี่ยนจาก absolute เป็น relative */
+  left: 1rem;
+  color: rgb(236, 141, 189);
+  z-index: 1010; /* ให้แน่ใจว่าโลโก้อยู่บนสุดเหนือองค์ประกอบอื่น */
+}
+
+.header .nav {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  z-index: 1010; /* เพิ่ม z-index ให้กับ .nav เพื่อให้เมนูอยู่ด้านบน */
+}
+
+.header .nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0 0 0 150px;
+}
+
+.header .nav ul li {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.header .nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.header .nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.header .header-right {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+  z-index: 1010; /* เพิ่ม z-index เพื่อให้ส่วนนี้อยู่ด้านบน */
+}
+
+.header .search {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.header .search input {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+}
+
+.header .search button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #555;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1010; /* เพิ่ม z-index เพื่อให้ปุ่มค้นหาอยู่ด้านบน */
+}
+
+.header .search button:hover {
+  background-color: #777;
+}
+
+.header .cart {
+  margin-left: 1rem;
+}
+
+.header .cart img {
+  width: 24px;
+  height: 24px;
+}
+
+body {
+  margin: 0;
+  padding-top: 80px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .header .logo {
+    font-size: small;
+    position: relative; /* ปรับตำแหน่งโลโก้ */
+    margin-bottom: 0.5rem;
+  }
+
+  .header .search {
+    margin-top: 1rem;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .header .search input {
+    width: 80%;
+    margin-right: 0;
+  }
+
+  .header .search button {
+    width: 100%;
+  }
+
+  .header .cart {
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header .logo h1 {
+    font-size: 1rem;
+    font-size: small;
+  }
+
+  .header .search input {
+    width: 70%;
+  }
+
+  .header .search button {
+    width: 70%;
+  }
+
+  .btn-login-header,
+  .btn-signup-header {
+    width: 20%;
+  }
+}
+
+.btn-login-header {
+  margin-right: 3px;
+  background-color: #333;
+  border: 1px solid white;
+}
+
+.btn-signup-header {
+  background-color: #333;
+  border: 1px solid white;
+}
+
+.lb-login-header {
+  color: white;
+}
+
+.btn-cart {
+  background: none;
+}
+
+/* Header.css */
+
+/* สำหรับ iPad Pro (12.9-inch) และ iPad Gen 8-10 */
+@media (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .header .logo {
+    font-size: 0.5rem; /* ลดขนาดโลโก้จาก 2rem เป็น 0.5rem */
+  }
+
+  .header .search input {
+    width: 60%;
+  }
+
+  .header .search button {
+    width: 60%;
+  }
+
+  .header .nav {
+    justify-content: space-around; /* จัดเรียงเมนูให้ไม่ขึ้นบรรทัดที่ 2 */
+  }
+
+  .header .nav ul {
+    padding-left: 0;
+    margin: 0; /* ลบระยะห่างเพื่อป้องกันการขึ้นบรรทัดใหม่ */
+    display: flex; /* ให้เมนูเรียงกันเป็นแนวนอน */
+    flex-wrap: nowrap; /* ป้องกันไม่ให้เมนูขึ้นบรรทัดใหม่ */
+  }
+
+  .header .header-right {
+    margin-right: 1.5rem;
+  }
+}
+
+/* สำหรับ iPad Pro (11-inch) */
+@media (min-device-width: 768px) and (max-device-width: 834px) and (orientation: landscape) {
+  .header .logo {
+    font-size: 0.3rem; /* ลดขนาดโลโก้จาก 1.5rem เป็น 0rem */
+  }
+
+  .header .search input {
+    width: 70%;
+  }
+
+  .header .search button {
+    width: 70%;
+  }
+
+  .header .nav {
+    justify-content: space-around;
+  }
+
+  .header .nav ul {
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+}

@@ -1,0 +1,44 @@
+/* Home.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000; /* พื้นหลังของหน้าเป็นสีดำ */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* ความสูงขั้นต่ำของ viewport */
+  }
+  
+  .home {
+    width: 90%;
+    max-width: 1200px; /* ความกว้างสูงสุดของคอมโพเนนต์ */
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.7); /* พื้นหลังของคอมโพเนนต์ Home เป็นสีดำโปร่งแสง */
+    color: #fff; /* สีข้อความเป็นสีขาว */
+    border-radius: 8px; /* มุมของกล่องโค้งมน */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* เงา */
+    text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+  }
+  
+  .content {
+    margin-bottom: 2rem;
+  }
+  
+  .content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .content p {
+    font-size: 1.2rem;
+  }
+  
+  .chart-container {
+    margin: 0 auto;
+  }
+  
+  .chart-container h3 {
+    margin-bottom: 1rem;
+  }
+  
