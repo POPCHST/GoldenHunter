@@ -8,8 +8,8 @@ import IconCartDropDown from "./component/Product/IconCartDropDown";
 const Header = () => {
   const { language, setLanguage } = useContext(LanguageContext); // ใช้คอนเท็กซ์
 
-  const handleLanguageChange = (lang: string) => {
-    setLanguage(lang);
+  const handleLanguageToggle = () => {
+    setLanguage(language === "EN" ? "TH" : "EN");
   };
 
   return (
@@ -42,7 +42,6 @@ const Header = () => {
       </nav>
       <div className="header-right">
         <div className="language-selector">
-
           <Link to="/login">
             <button className="btn-login-header">
               {language === "EN" ? "Login" : "ล็อกอิน"}
@@ -56,18 +55,13 @@ const Header = () => {
           </Link>
 
           <button
+            onClick={handleLanguageToggle}
             style={{ marginRight: "2px", marginLeft: "3rem" }}
             className={language === "EN" ? "active" : ""}
-            onClick={() => handleLanguageChange("EN")}
           >
-            EN
+            {language === "EN" ? "TH" : "EN"}
           </button>
-          <button
-            className={language === "TH" ? "active" : ""}
-            onClick={() => handleLanguageChange("TH")}
-          >
-            TH
-          </button>
+
         </div>
 
         <div className="cart">

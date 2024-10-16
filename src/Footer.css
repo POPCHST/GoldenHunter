@@ -1,13 +1,15 @@
 /* Footer CSS */
 .footer {
-  background-color: #333; /* สีพื้นหลัง */
-  color: #fff; /* สีข้อความ */
+  background-color: #333;
+  color: #fff;
   padding: 2rem 1rem;
   text-align: center;
-  width: 100%; /* ขยายเต็มความกว้างของหน้าจอ */
-  box-sizing: border-box; /* ทำให้ padding รวมในขนาดทั้งหมด */
-  position: relative; /* ใช้เพื่อให้ footer อยู่ในตำแหน่งที่ถูกต้อง */
-  bottom: 0; /* ให้อยู่ที่ด้านล่างสุด */
+  width: 100%;
+  box-sizing: border-box;
+  /* position: fixed; */
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .footer-container {
@@ -16,6 +18,7 @@
   justify-content: space-around; /* จัดช่องว่างระหว่างคอลัมน์ */
   max-width: 1200px; /* ปรับขนาดสูงสุดของ container ตามต้องการ */
   margin: 0 auto; /* จัดให้ container อยู่ตรงกลาง */
+  flex: 1;
 }
 
 .footer-column {

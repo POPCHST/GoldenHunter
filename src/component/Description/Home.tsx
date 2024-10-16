@@ -42,7 +42,7 @@ const Home: React.FC = () => {
 
   return (
     <section id="home" className="home">
-      <div className="content">
+      <div className="home-content">
         <h2>{language == "EN" ? "Welcome to My Trading Website" : "ยินดีต้อนรับสู่เว็บไซต์ของเรา"}</h2>
         <p>
           Stay updated with the latest trends and insights in the trading world.
