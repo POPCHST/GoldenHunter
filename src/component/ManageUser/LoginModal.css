@@ -1,0 +1,102 @@
+.modal-overlay-login {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-login {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    transition: all 0.3s ease;
+  }
+  
+  .h2-login {
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+    color: #333;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500; 
+    color: #555;
+  }
+  
+  .inp-username, .inp-password {
+    width: 94%; 
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+  }
+  
+  .inp-password:focus, .inp-username:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .btn-login-confirm, .btn-cancel-confirm {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-login-confirm:hover {
+    background-color: #0056b3;
+  }
+  
+  .btn-cancel-confirm {
+    background-color: #f44336;
+  }
+  
+  .btn-cancel-confirm:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 600px) {
+    .modal-login {
+      width: 95%;
+      padding: 20px;
+    }
+  
+    .h2-login {
+      font-size: 24px;
+    }
+  
+    .inp-username, .inp-password {
+      padding: 10px;
+    }
+  
+    .btn-login-confirm, .btn-cancel-confirm {
+      padding: 10px;
+      font-size: 14px;
+    }
+  }
+  

@@ -1,6 +1,6 @@
 /* styles.css */
 body {
-    font-family: 'Roboto', sans-serif; /* ใช้ฟอนต์ที่เลือก */
+    font-family: 'Sarabun', sans-serif; /* ใช้ฟอนต์ที่เลือก */
     margin: 0;
     padding: 0;
     line-height: 1.6; /* เพิ่มความสูงของบรรทัด */
@@ -10,10 +10,10 @@ body {
   h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Sarabun', sans-serif;
   }
   
   p {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Sarabun', sans-serif;
   }
   
