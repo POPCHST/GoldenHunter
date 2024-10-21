@@ -13,8 +13,8 @@ html, body {
 
 /* เนื้อหาหลักของแอป */
 .content {
-  flex-grow: 1; /* ให้ content ยืดได้เต็มหน้าจอ */
-  padding: 1rem; /* เพิ่ม padding ถ้าต้องการ */
+  flex-grow: 1;
+  padding: 1rem;
 }
 
 /* Footer CSS */

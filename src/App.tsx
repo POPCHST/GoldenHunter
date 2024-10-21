@@ -7,10 +7,12 @@ import './style.css';
 import Header from './Header';
 import Home from './component/Description/Home';
 import Products from './component/Product/Products';
-import Login from './component/ManageUser/Login';
+// import Login from './component/ManageUser/Login';
 import Signup from './component/ManageUser/Signup';
 import Community from './component/Description/Community';
 import InformationTrader from './component/Description/InformationTrader';
+import Footer from './Footer';
+import LoginModal from './component/ManageUser/LoginModal';
 
 const AppContent = () => {
   const { isLoggedIn } = useAuth(); // ใช้ AuthContext
@@ -22,11 +24,13 @@ const AppContent = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
-          <Route path="/login" element={<Login />} />
+          {/* <Route path="/login" element={<Login />} /> */}
+          <Route path="/login" element={<LoginModal isOpen={true} onClose={() => {}} />} />
           {!isLoggedIn && <Route path="/signup" element={<Signup />} />} {/* แสดง Signup เฉพาะเมื่อไม่ล็อกอิน */}
           <Route path="/community" element={<Community />} />
           <Route path="/info" element={<InformationTrader />} />
         </Routes>
+        <Footer/>
       </div>
     </div>
   );

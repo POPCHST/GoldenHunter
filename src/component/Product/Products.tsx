@@ -10,7 +10,6 @@ const Products = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        // const response = await axios.get('http://localhost:3000/api/products'); // URL ของ API
         const response = await appApi.get("api/products"); // URL ของ API
 
         setProducts(response.data);

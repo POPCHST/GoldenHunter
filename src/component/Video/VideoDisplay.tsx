@@ -26,24 +26,22 @@ function VideoDisplay() {
 }
 
 const videoSectionStyle: React.CSSProperties = {
-    display: 'flex',
-    flexWrap: 'wrap',
-    gap: '20px',
-    justifyContent: 'center',
+  display: "flex",
+  flexWrap: "wrap",
+  gap: "20px",
+  justifyContent: "center",
 };
 
 const videoCardStyle: React.CSSProperties = {
-    width: '300px',
-    border: '1px solid #ddd',
-    borderRadius: '5px',
-    overflow: 'hidden',
+  width: "300px",
+  border: "1px solid #ddd",
+  borderRadius: "5px",
+  overflow: "hidden",
 };
 
 const thumbnailStyle: React.CSSProperties = {
-    width: '100%',
-    height: 'auto',
+  width: "100%",
+  height: "auto",
 };
-
-
 
 export default VideoDisplay;
