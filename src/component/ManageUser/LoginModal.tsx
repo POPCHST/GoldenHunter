@@ -16,21 +16,32 @@ const LoginModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({
 
   const handleLogin = async () => {
     try {
+
+      if (!username || !password) {
+        console.error("Username or password is missing");
+        return;
+      }
+
       const response = await appApi.post('/api/login/loginuser', {
         user_name: username,
         user_password: password,
       });
 
-      console.log(response.data); // ดูข้อมูลที่ได้รับ
+      console.log(response.data);
 
       if (response.data && response.data.message === "Login successful") {
+        const { user_fullname } = response.data;
+        const userData = { username };
+
         sessionStorage.setItem('username', username);
         sessionStorage.setItem('password', password);
+        sessionStorage.setItem('user_fullname', user_fullname);
         console.log("Username stored in sessionStorage:", sessionStorage.getItem('username'));
 
-        login();
-        // onclose();
+        login(userData);
+        // login({ username: user_name, user_fullname });
         navigate("/"); // นำทางไปยังหน้าแรก
+
       } else {
         throw new Error("Login failed");
       }
@@ -40,11 +51,9 @@ const LoginModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({
   };
 
   const handleCancel = () => {
-    onClose(); // ปิดโมดัล
+    onClose(); 
     navigate("/"); // นำทางไปยังหน้า Home
   };
-
-  
 
   if (!isOpen) return null;
 

@@ -1,0 +1,36 @@
+.dropdown-login {
+    position: absolute;
+    top: 70%; 
+    /* left: 0;  */
+    background: rgba(255, 255, 255, 0.9); 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    z-index: 1000;
+  }
+  
+  .dropdown-menu-login {
+    padding: 10px;
+    margin: 0;
+  }
+  
+  .dropdown-menu-login span {
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .dropdown-menu-login span:hover {
+    background: #e4d3d3;
+    border-radius: 5px;
+  }
+  
+  .span-dropdown-profile{
+    color: black;
+  }
+
+  .span-dropdowm-logout{
+    font-weight: bolder;
+    color: rgb(202, 13, 13);
+  }
