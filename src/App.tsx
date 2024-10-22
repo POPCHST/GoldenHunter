@@ -11,7 +11,7 @@ import Products from './component/Product/Products';
 import Signup from './component/ManageUser/Signup';
 import Community from './component/Description/Community';
 import InformationTrader from './component/Description/InformationTrader';
-import Footer from './Footer';
+// import Footer from './Footer';
 import LoginModal from './component/ManageUser/LoginModal';
 
 const AppContent = () => {
@@ -30,7 +30,7 @@ const AppContent = () => {
           <Route path="/community" element={<Community />} />
           <Route path="/info" element={<InformationTrader />} />
         </Routes>
-        <Footer/>
+        {/* <Footer/> */}
       </div>
     </div>
   );

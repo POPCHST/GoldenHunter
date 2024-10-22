@@ -4,6 +4,7 @@ import { useAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom"; // นำเข้า useNavigate
 import "./LoginModal.css"; // สไตล์ของ Modal
 import { appApi } from "../../data/globle";
+import { showAlert } from "../../services/alerts";
 
 const LoginModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({
   isOpen,
@@ -16,42 +17,43 @@ const LoginModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({
 
   const handleLogin = async () => {
     try {
-
       if (!username || !password) {
         console.error("Username or password is missing");
         return;
       }
 
-      const response = await appApi.post('/api/login/loginuser', {
+      const response = await appApi.post("/api/login/loginuser", {
         user_name: username,
         user_password: password,
       });
-
-      console.log(response.data);
 
       if (response.data && response.data.message === "Login successful") {
         const { user_fullname } = response.data;
         const userData = { username };
 
-        sessionStorage.setItem('username', username);
-        sessionStorage.setItem('password', password);
-        sessionStorage.setItem('user_fullname', user_fullname);
-        console.log("Username stored in sessionStorage:", sessionStorage.getItem('username'));
+        sessionStorage.setItem("username", username);
+        sessionStorage.setItem("password", password);
+        sessionStorage.setItem("user_fullname", user_fullname);
 
         login(userData);
-        // login({ username: user_name, user_fullname });
         navigate("/"); // นำทางไปยังหน้าแรก
-
       } else {
         throw new Error("Login failed");
       }
-    } catch (error) {
-      console.error("Error during login:", error);
+    } catch (error: any) {
+      if (error.response && error.response.status === 404) {
+        showAlert('invalidUserNotFound')
+      } else if (error.response && error.response.status === 401) {
+        showAlert('invalidUserNotFound')
+
+      } else {
+        // console.error("Error during login:", error);
+      }
     }
   };
 
   const handleCancel = () => {
-    onClose(); 
+    onClose();
     navigate("/"); // นำทางไปยังหน้า Home
   };
 
@@ -90,7 +92,11 @@ const LoginModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({
               required
             />
           </div>
-          <button onClick={handleLogin} className="btn-login-confirm" type="submit">
+          <button
+            onClick={handleLogin}
+            className="btn-login-confirm"
+            type="submit"
+          >
             Login
           </button>
           <button

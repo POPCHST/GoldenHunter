@@ -49,9 +49,10 @@ const Header = () => {
           : "คุณต้องการออกจากระบบหรือไม่ ?",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonText: language === "EN" ? "Yes, log out" : "ใช่, ออกจากระบบ",
+      confirmButtonText: language === "EN" ? "log out" : "ใช่, ออกจากระบบ",
       cancelButtonText: language === "EN" ? "Cancel" : "ยกเลิก",
       heightAuto: false,
+      backdrop: false,
     }).then((result: any) => {
       if (result.isConfirmed) {
         logout();
