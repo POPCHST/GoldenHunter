@@ -32,16 +32,40 @@ export const alertForms: { [key: string]: SweetAlertOptions } = {
     heightAuto: false,
     backdrop: false
 
+  },
+  defaultFormData: {
+    title: "Default : คืนค่า",
+    text: "คุณต้องการเคลียร์ค่าหรือไม่ ?",
+    icon: "question",
+    confirmButtonText: 'ใช่ ยืนยัน!',
+    cancelButtonText: 'ไม่ใช่',
+    showCancelButton: true,
+    heightAuto: false,
+    backdrop: false
+
+  },
+  newRegister: {
+    title: "Add Register : สมาชิกใหม่",
+    text: "ยืนยันที่จะเพิ่มข้อมูลใหม่ใช่หรือไม่ ?",
+    icon: "question",
+    iconHtml: '<img src="../../public/image/add-user.png" style="width: 50px; height: 50px;">',
+    confirmButtonText: 'ยืนยัน',
+    cancelButtonText: 'ไม่ใช่',
+    showCancelButton: true,
+    heightAuto: false,
+    backdrop: false
+
   }
 };
 
 // ฟังก์ชันสำหรับแสดงแจ้งเตือน
 export const showAlert = (alertType: keyof typeof alertForms) => {
   const alert = alertForms[alertType];
-  
+
   if (alert) {
-    Swal.fire(alert);
+    return Swal.fire(alert); // Return เพื่อใช้งาน then ใน signup.tsx
   } else {
     console.error("Alert type not found");
+    return Promise.reject(); // เพิ่มเพื่อให้ Promise มีเส้นทางชัดเจน
   }
 };

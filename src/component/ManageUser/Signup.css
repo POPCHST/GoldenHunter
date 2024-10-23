@@ -1,83 +1,155 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+/* Fullscreen registration form */
+.registration-fullscreen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px; /* เพิ่ม padding ให้มีพื้นที่ว่างด้านบนและล่าง */
+  overflow: hidden; /* ป้องกันการเลื่อนภายนอก fullscreen */
+}
+
+/* Scrollable container when content overflows */
+.registration-container {
+  width: 100%;
+  max-width: 500px;
+  padding: 100px;
+  padding-left: 70px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-height: 90vh; /* จำกัดความสูงของ container */
+  overflow-y: auto; /* ทำให้มี scroll bar เมื่อเนื้อหาเกินขอบ */
+}
+
+/* Centered form title */
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Form layout: 2 columns */
+.form-register {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* gap: 20px; */
+}
+
+.form-column {
+  width: 45%;
+}
+
+/* Input styles */
+.regis-username,
+.regis-password,
+.regis-firstname,
+.regis-lastname,
+.regis-email,
+.regis-phone,
+.regis-nickname,
+.regis-address input,
+.regis-upload input {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border 0.3s;
+}
+
+.regis-username:focus,
+.regis-password:focus,
+.regis-firstname:focus,
+.regis-lastname:focus,
+.regis-email:focus,
+.regis-phone:focus,
+.regis-nickname:focus,
+.regis-address input:focus,
+.regis-upload input:focus {
+  border: 1px solid #007bff;
+  outline: none;
+}
+
+/* Nickname checkbox */
+.regis-checkbox {
+  margin-bottom: 20px;
+}
+
+/* Full-width for address and upload fields */
+.regis-address,
+.regis-upload {
+  width: 100%;
+}
+
+/* Button group */
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 120px;
+}
+
+.btn-register,
+.btn-cancel,
+.btn-default {
+  padding: 0.8em 1.5em; /* ปรับ padding ตามหน่วย em เพื่อให้สัมพันธ์กับขนาดฟอนต์ */
+  background-color: #1fa50d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
+
+
+.btn-register:hover {
+  background-color: #1fa50d;
+}
+
+.btn-cancel {
+  background-color: #6c757d;
+}
+
+.btn-default{
+  background-color: #0e395f;
   
-  html, body {
-    height: 100%;
-    font-family: 'Sarabun', sans-serif; /* ใช้ฟอนต์ Sarabun */
+}
+.btn-cancel:hover {
+  background-color: #5a6268;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .registration-container {
+    max-width: 600px;
+    padding: 30px;
   }
-  
-  .container {
-    display: flex;
-    height: 100vh;
-    background-color: #000;
+
+  .form-column {
+    width: 100%;
   }
-  
-  .left-section {
-    flex: 1;
-    background-image: url('path-to-your-image.jpg');
-    background-size: cover;
-    background-position: center;
-    position: relative;
+
+  .btn-register {
+    font-size: 14px;
+    padding: 12px;
   }
-  
-  .overlay {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    color: white;
-  }
-  
-  .quote {
-    font-size: 2.5rem;
-    font-weight: bold;
-  }
-  
-  .author {
-    margin-top: 10px;
-  }
-  
-  .right-section {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #000;
-    color: white;
+}
+
+@media (max-width: 820px) {
+  .registration-container {
+    max-width: 100%;
     padding: 20px;
   }
-  
-  h2 {
-    margin-bottom: 20px;
+
+  .form-column {
+    width: 100%;
   }
-  
-  button {
-    margin: 10px 0;
-    padding: 10px 20px;
-    border: none;
-    color: white;
-    background-color: #444;
-    cursor: pointer;
+
+  .btn-register {
+    font-size: 14px;
+    padding: 12px;
   }
-  
-  button.google-btn {
-    background-color: white;
-    color: black;
-  }
-  
-  button.email-btn {
-    background-color: #333;
-  }
-  
-  .other-options {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .login-text {
-    margin-top: 20px;
-  }
-  
+}

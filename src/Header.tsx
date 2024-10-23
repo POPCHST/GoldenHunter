@@ -34,11 +34,14 @@ const Header = () => {
     if (!isLoggedIn) {
       // setIsLoginModalOpen(true);
       navigate("/login");
-
     } else {
       setIsDropdownOpen(!isDropdownOpen); // สลับการแสดง dropdown
     }
   };
+
+  // const handleSignUpClick = () => {
+  //   navigate("/signup");
+  // };
 
   const handleLogout = () => {
     Swal.fire({
@@ -117,6 +120,7 @@ const Header = () => {
                 {language === "EN" ? "Sign Up" : "สมัครสมาชิก"}
               </button>
             </Link>
+
           )}
 
           <button
