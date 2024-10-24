@@ -21,10 +21,10 @@ body {
     text-align: center;
   }
   
-  /* .home-content {
-    margin-top: 10rem;
+  .home-content {
+    margin-top: 5rem;
   }
-   */
+  
   .content h2 {
     font-size: 2rem;
     margin-bottom: 1rem;

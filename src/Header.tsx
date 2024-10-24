@@ -74,6 +74,11 @@ const Header = () => {
           <li>
             <Link to="/">{language === "EN" ? "Home" : "หน้าหลัก"}</Link>
           </li>
+          
+          <li>
+            <Link to="/course">{language === "EN" ? "Course" : "คอร์สเรียน"}</Link>
+          </li>
+
           <li>
             <Link to="/products">
               {language === "EN" ? "Products" : "เครื่องมือ"}

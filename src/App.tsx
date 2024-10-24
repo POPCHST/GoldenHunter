@@ -13,6 +13,7 @@ import Community from './component/Description/Community';
 import InformationTrader from './component/Description/InformationTrader';
 // import Footer from './Footer';
 import LoginModal from './component/ManageUser/LoginModal';
+import CourseList from './component/Course/CourseList';
 
 const AppContent = () => {
   const { isLoggedIn } = useAuth(); // ใช้ AuthContext
@@ -23,6 +24,7 @@ const AppContent = () => {
       <div className="content">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/course" element={<CourseList/>}></Route>
           <Route path="/products" element={<Products />} />
           {/* <Route path="/login" element={<Login />} /> */}
           <Route path="/login" element={<LoginModal isOpen={true} onClose={() => {}} />} />
